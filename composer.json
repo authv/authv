@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "vinkas/visa",
+    "description": "A simple, secure user authentication and management system using Laravel",
+    "keywords": ["php authentication", "user management", "laravel", "visa", "vinkas"],
     "license": "MIT",
     "type": "project",
     "require": {
