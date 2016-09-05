@@ -21,7 +21,6 @@ trait AuthenticatesUsers
    */
   protected function credentials(Request $request)
   {
-		echo "aa";
 		$loginInput = $request->input($this->username());
 		$loginField = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 		$request->merge([$loginField => $loginInput]);
