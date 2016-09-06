@@ -16,5 +16,6 @@ return [
     'email' => 'Email address',
     'password' => 'Password',
     'confirm_password' => 'Confirm password',
+    'login' => 'Username or Email',
 
 ];
