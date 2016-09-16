@@ -1,27 +1,21 @@
-# Laravel PHP Framework
+# Authentication Server for [Vinkas MO](https://github.com/vinkasMO/mo)
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+A simple, secure php authentication server for [Vinkas MO](https://github.com/vinkasMO/mo) using [Laravel](https://github.com/laravel/laravel), [Socialite](https://github.com/laravel/socialite) [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Installation
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+#### Via Composer Create-Project
 
-## Official Documentation
+You may install by issuing the Composer create-project command in your terminal:
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+> Currently MO is highly in development. So please try our development branch using below command.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+`composer create-project --stability=dev vinkas/mo-authentication-server`
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this Authentication Server, please send an e-mail to Vinoth Kannan at vinothkannan@vinkas.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Vinkas MO Authentication Server is open-sourced software licensed under the [MIT license](LICENSE.txt).
