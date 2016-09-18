@@ -1,6 +1,6 @@
 {
     "name": "vinkas/mo-authentication-server",
-    "description": "A simple, secure user authentication and management system using Laravel",
+    "description": "A simple, secure php authentication server using Laravel, Socialite Passport and Material Design Lite",
     "keywords": ["authentication server", "mo", "vinkas", "socialite", "passport", "laravel"],
     "license": "MIT",
     "type": "project",
