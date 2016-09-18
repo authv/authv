@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Socialite;
 use App;
@@ -19,6 +20,16 @@ class SocialiteController extends Controller
   public function redirectToGoogle()
   {
     return $this->redirectTo('google');
+  }
+
+  /**
+   * Redirect the user to the Facebook authentication page.
+   *
+   * @return Response
+   */
+  public function redirectToFacebook()
+  {
+    return $this->redirectTo('facebook');
   }
 
   /**
@@ -44,6 +55,7 @@ class SocialiteController extends Controller
     if($ouser == null) {
       $ouser = $this->create($provider->id, $puser);
     }
+    $request->session()->put('oauth_user_id', $ouser->id);
     if($ouser->user_id) {
       Auth::loginUsingId($ouser->user_id, true);
       return $this->redirectAfterLogin();
@@ -95,6 +107,16 @@ class SocialiteController extends Controller
   public function handleGoogleCallback(Request $request)
   {
     return $this->handleCallback($request, 'google');
+  }
+
+  /**
+   * Obtain the user information from Facebook.
+   *
+   * @return Response
+   */
+  public function handleFacebookCallback(Request $request)
+  {
+    return $this->handleCallback($request, 'facebook');
   }
 
 }

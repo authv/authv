@@ -5,7 +5,7 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "material-design-lite": "^1.2.1",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",

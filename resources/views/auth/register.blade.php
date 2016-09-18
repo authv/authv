@@ -1,84 +1,69 @@
-@extends('layouts.app')
+@extends('layouts.minimal')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
+<h4>Create a free account</h4>
+<a href="{{ url('/login') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+  Existing user? <span class="mdl-button--primary">Sign in</span>
+</a>
+<div class="mdl-grid">
+  <div class="mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+      <div class="mdl-layout-spacer"></div>
+      <form class="form-vertical" role="form" method="POST" action="{{ url('/register') }}">
+        {{ csrf_field() }}
+        <div class="register-card mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__supporting-text">
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">{{  trans('label.name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">{{  trans('label.username') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required>
-
-                                @if ($errors->has('username'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">{{  trans('label.email') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">{{  trans('label.password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        {!! MO::immigrationFields() !!}
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{  trans('button.register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('name') ? ' is-invalid' : '' }}">
+              <input class="mdl-textfield__input" type="text" id="name" name="name" value="{{ old('name') }}" autofocus />
+              <label class="mdl-textfield__label" for="name">{{ trans('label.name') }}</label>
+              @if ($errors->has('name'))
+              <span class="mdl-textfield__error">{{ $errors->first('name') }}</span>
+              @endif
             </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('username') ? ' is-invalid' : '' }}">
+              <input class="mdl-textfield__input" type="text" id="username" name="username" value="{{ old('username') }}" />
+              <label class="mdl-textfield__label" for="username">{{ trans('label.username') }}</label>
+              @if ($errors->has('username'))
+              <span class="mdl-textfield__error">{{ $errors->first('username') }}</span>
+              @endif
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' is-invalid' : '' }}">
+              <input class="mdl-textfield__input" type="email" id="email" name="email" value="{{ old('email') }}" />
+              <label class="mdl-textfield__label" for="email">{{ trans('label.email') }}</label>
+              @if ($errors->has('email'))
+              <span class="mdl-textfield__error">{{ $errors->first('email') }}</span>
+              @endif
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
+              <input class="mdl-textfield__input" type="password" id="password" name="password" value="{{ old('password') }}" />
+              <label class="mdl-textfield__label" for="password">{{ trans('label.password') }}</label>
+              @if ($errors->has('password'))
+              <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
+              @endif
+            </div>
+
+            {!! MO::immigrationFields() !!}
+
+            <div class="mdl-card__actions">
+              <button type="submit" class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+                {{  trans('button.register') }}
+              </button>
+            </div>
+
+          </form>
         </div>
+      </div>
+      <div class="mdl-layout-spacer"></div>
     </div>
+  </div>
+  <div class="mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-layout-spacer"></div>
+    @include('auth.social')
+    <div class="mdl-layout-spacer"></div>
+  </div>
 </div>
 @endsection

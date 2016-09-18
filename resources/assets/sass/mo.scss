@@ -1,0 +1,124 @@
+a {
+  text-decoration: none;
+}
+.mdl-layout__header-row {
+  padding-left: 40px;
+}
+.minimal-layout {
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .mdl-layout__header-row {
+    padding-left: 16px;
+  }
+}
+.brand-header {
+  overflow: visible;
+}
+.brand-header .brand-title img {
+  max-height: 40px;
+}
+.is-small-screen .brand-logo, .brand-mobile-logo {
+  display: none;
+}
+.is-small-screen .brand-mobile-logo {
+  display: block;
+}
+.page-content {
+  padding: 56px;
+}
+.is-small-screen .page-content {
+  padding: 28px;
+}
+.form-vertical .mdl-card__supporting-text > * {
+  display: block;
+}
+.form-vertical .mdl-field {
+  padding: 20px 0;
+}
+.mdl-card.login-card {
+  margin-bottom: 10px;
+}
+.mdl-card.register-card {
+  text-align: center;
+  margin: 0 auto 15px 0;
+}
+// Social Connect Buttons
+.mdl-card.social-card {
+  min-height: 115px;
+  background: none;
+}
+.mo-idp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mo-list-item {
+  direction: ltr;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.mo-idp-button {
+  direction: ltr;
+  font-weight: 500;
+  height: 40px;
+  max-width: 220px;
+  padding-left: 16px;
+  text-align: left;
+  width: 100%;
+}
+.mo-idp-icon {
+  border: none;
+  display: inline-block;
+  height: 18px;
+  vertical-align: middle;
+  width: 18px;
+}
+.mo-idp-text {
+  color: #fff;
+  font-size: 14px;
+  padding-left: 16px;
+  text-transform: none;
+  vertical-align: middle;
+}
+.mo-idp-text.mo-idp-text-long {
+  display: inline-block;
+}
+.is-small-screen .mo-idp-text.mo-idp-text-long {
+  display: none;
+}
+.mo-idp-text.mo-idp-text-short {
+  display: none;
+}
+.is-small-screen .mo-idp-text.mo-idp-text-short {
+  display: inline-block;
+}
+.mo-idp-list > .mo-list-item {
+  margin-bottom: 15px;
+}
+.is-small-screen .mo-idp-list > .mo-list-item {
+  display: inline-flex;
+  margin-right: 15px;
+}
+.is-small-screen .mo-idp-list > .mo-list-item:last-child {
+  margin-right: 0;
+}
+.mo-idp-password,.mo-idp-password:hover {
+    background-color: #db4437
+}
+.mo-idp-google, .mo-idp-google:hover {
+  background-color: #ffffff;
+}
+.mo-idp-facebook, .mo-idp-facebook:hover {
+  background-color: #3b5998;
+}
+.mo-idp-github,.mo-idp-github:hover {
+    background-color: #333333
+}
+.mo-idp-twitter,.mo-idp-twitter:hover {
+    background-color: #55acee
+}
+.mo-idp-google > .mo-idp-text {
+  color: #757575;
+}

@@ -1,68 +1,58 @@
-@extends('layouts.app')
+@extends('layouts.minimal')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
-                            <label for="login" class="col-md-4 control-label">{{ trans('label.login') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="login" type="text" class="form-control" name="login" value="{{ old('login') }}" required autofocus>
-
-                                @if ($errors->has('login'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('login') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">{{ trans('label.password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ trans('button.login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+<h4>Sign into continue</h4>
+<div class="mdl-grid">
+  <div class="mdl-layout-spacer"></div>
+  <div class="is-small-screen">
+    @include('auth.social')
+  </div>
+  <div class="mdl-layout-spacer"></div>
 </div>
-@endsection
+<div class="mdl-grid">
+  <div class="mdl-layout-spacer"></div>
+  <form class="form-vertical" role="form" method="POST" action="{{ url('/login') }}">
+    {{ csrf_field() }}
+    <div class="login-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__supporting-text" style="text-align: left">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('login') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="text" id="login" name="login" value="{{ old('login') }}" autofocus />
+          <label class="mdl-textfield__label" for="login">{{ trans('label.login') }}</label>
+          @if ($errors->has('login'))
+          <span class="mdl-textfield__error">{{ $errors->first('login') }}</span>
+          @endif
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="password" id="password" name="password" value="{{ old('password') }}" />
+          <label class="mdl-textfield__label" for="password">{{ trans('label.password') }}</label>
+          @if ($errors->has('password'))
+          <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
+          @endif
+        </div>
+
+        <div class="mdl-field">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="remember">
+            <input id="remember" type="checkbox" name="remember" class="mdl-switch__input" checked>
+            <span class="mdl-switch__label">Remember Me</span>
+          </label>
+        </div>
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button type="submit" class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          {{ trans('button.login') }}
+        </button>
+        <a href="{{ url('/password/reset') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+          Forgot Your Password?
+        </a>
+      </div>
+    </div>
+  </form>
+  <div class="mdl-layout-spacer"></div>
+</div>
+<a href="{{ url('/register') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+  New user? <span class="mdl-button--accent">Create account</a>
+  </a>
+  @endsection

@@ -20,6 +20,6 @@ class User extends Model
      */
     public function provider()
     {
-      return $this->belongsTo('App\OAuth\Provider');
+      return $this->belongsTo('App\Models\OAuth\Provider');
     }
 }

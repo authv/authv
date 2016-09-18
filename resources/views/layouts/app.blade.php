@@ -1,85 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.skeleton')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    @yield('content')
-
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-</body>
-</html>
+@section('body')
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="brand-header mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      @include('widgets.logo')
+      <!-- Add spacer, to align navigation to the right in desktop -->
+      <div class="mdl-layout-spacer"></div>
+      <div class="brand-navigation-container">
+        <nav class="brand-navigation mdl-navigation">
+          @if (Auth::guest())
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ url('/login') }}">Login</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ url('/register') }}">Register</a>
+          @endif
+        </nav>
+      </div>
+      @if (Auth::user())
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="more-button">
+        {{ Auth::user()->name }}
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+        <li class="mdl-menu__item">
+          <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Logout
+          </a>
+          <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
+        </li>
+      </ul>
+      @endif
+    </div>
+  </header>
+  <div class="mo-content mdl-layout__content">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      <div class="page-content mdl-cell mdl-cell--10-col">
+        @yield('content')
+      </div>
+    </div>
+  </div>
+</div>
+@endsection

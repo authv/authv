@@ -4,7 +4,7 @@ namespace App\Foundation\Auth;
 
 use Illuminate\Foundation\Auth\RegistersUsers as Registers;
 use Illuminate\Http\Request;
-use App\OAuth;
+use App\Models\OAuth;
 use App\User;
 use Validator;
 

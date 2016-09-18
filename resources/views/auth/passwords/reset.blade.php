@@ -1,70 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+<div class="mdl-grid">
+  <div class="mdl-layout-spacer"></div>
+  <form class="form-vertical" role="form" method="POST" action="{{ url('/password/reset') }}">
+    {{ csrf_field() }}
+    <input type="hidden" name="token" value="{{ $token }}">
 
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
-                        {{ csrf_field() }}
+    <div class="reset-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Reset password</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
 
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ trans('button.reset_password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('email') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="email" id="email" name="email" value="{{ $email or old('email') }}" autofocus />
+          <label class="mdl-textfield__label" for="email">{{ trans('label.email') }}</label>
+          @if ($errors->has('email'))
+          <span class="mdl-textfield__error">{{ $errors->first('email') }}</span>
+          @endif
         </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="password" id="password" name="password" />
+          <label class="mdl-textfield__label" for="password">{{ trans('label.password') }}</label>
+          @if ($errors->has('password'))
+          <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
+          @endif
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="password" id="password-confirm" name="password_confirmation" />
+          <label class="mdl-textfield__label" for="password">{{ trans('label.password_confirmation') }}</label>
+          @if ($errors->has('password_confirmation'))
+          <span class="mdl-textfield__error">{{ $errors->first('password_confirmation') }}</span>
+          @endif
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-4">
+            <button type="submit" class="btn btn-primary">
+              {{ trans('button.reset_password') }}
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+  </form>
+
 </div>
 @endsection

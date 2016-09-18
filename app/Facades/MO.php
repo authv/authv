@@ -29,6 +29,18 @@ class MO extends Facade
     {
       Route::get('/users/activate-account/{token}', 'Auth\EmailConfirmationController@showConfirmationForm')->name('confirm-email');
       Route::post('/users/activate-account', 'Auth\EmailConfirmationController@confirm');
+      self::socialiteRoutes();
+    }
+
+    protected static function socialiteRoutes() {
+      Route::get('/join', 'Auth\RegisterController@showJoinForm')->name('join');
+      Route::post('/join', 'Auth\RegisterController@join');
+      // OAuth2 Sign in
+      Route::get('/oauth2/google', 'Auth\SocialiteController@redirectToGoogle')->name('oauth2-google');
+      Route::get('/oauth2/facebook', 'Auth\SocialiteController@redirectToFacebook')->name('oauth2-facebook');
+      // OAuth2 Sign in Callbacks
+      Route::get('/oauth2/google/callback', 'Auth\SocialiteController@handleGoogleCallback');
+      Route::get('/oauth2/facebook/callback', 'Auth\SocialiteController@handleFacebookCallback');
     }
 
     public static function immigrationFields()
