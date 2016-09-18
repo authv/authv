@@ -2,6 +2,13 @@
 
 A simple, secure php authentication server using [Laravel](https://github.com/laravel/laravel), [Socialite](https://github.com/laravel/socialite) [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
 
+## Screenshots
+
+![Login](https://raw.githubusercontent.com/vinkasMO/mo-docs/master/screenshots/login.png)
+<hr />
+![Register](https://raw.githubusercontent.com/vinkasMO/mo-docs/master/screenshots/register.png)
+<hr />
+
 ## Installation
 
 #### Via Composer Create-Project
