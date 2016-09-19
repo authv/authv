@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Validator;
 use App\Facades\MO;
+use Illuminate\Support\ServiceProvider;
 
 class MOServiceProvider extends ServiceProvider
 {
@@ -25,6 +24,6 @@ class MOServiceProvider extends ServiceProvider
      */
     public function register()
     {
-      //
+        //
     }
 }

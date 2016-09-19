@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
