@@ -2,7 +2,8 @@
 
 A simple, secure php authentication server using [Laravel](https://github.com/laravel/laravel), [Socialite](https://github.com/laravel/socialite), [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
 
-[![Build Status](https://travis-ci.org/vinkasMO/mo-authentication-server.svg)](https://travis-ci.org/vinkasMO/mo-authentication-server)
+[![StyleCI](https://styleci.io/repos/67142226/shield?branch=master)](https://styleci.io/repos/67142226)
+[![Build Status](https://travis-ci.org/vinkasMO/mo-authentication-server.svg?branch=master)](https://travis-ci.org/vinkasMO/mo-authentication-server)
 [![Total Downloads](https://poser.pugx.org/vinkas/mo-authentication-server/d/total.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
 [![Latest stable version](https://poser.pugx.org/vinkas/mo-authentication-server/v/stable.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
 [![Latest Unstable Version](https://poser.pugx.org/vinkas/mo-authentication-server/v/unstable.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
