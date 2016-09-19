@@ -25,6 +25,6 @@ class Provider extends Model
      */
     public function users()
     {
-      return $this->hasMany('App\Models\OAuth\User');
+        return $this->hasMany('App\Models\OAuth\User');
     }
 }
