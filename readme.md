@@ -1,13 +1,18 @@
 # MO Authentication Server
 
-A simple, secure php authentication server using [Laravel](https://github.com/laravel/laravel), [Socialite](https://github.com/laravel/socialite) [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
+A simple, secure php authentication server using [Laravel](https://github.com/laravel/laravel), [Socialite](https://github.com/laravel/socialite), [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
+
+[![Build Status](https://travis-ci.org/vinkasMO/mo-authentication-server.svg)](https://travis-ci.org/vinkasMO/mo-authentication-server)
+[![Total Downloads](https://poser.pugx.org/vinkas/mo-authentication-server/d/total.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
+[![Latest stable version](https://poser.pugx.org/vinkas/mo-authentication-server/v/stable.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
+[![Latest Unstable Version](https://poser.pugx.org/vinkas/mo-authentication-server/v/unstable.svg)](https://packagist.org/packages/vinkas/mo-authentication-server)
 
 ## Screenshots
 
 ![Login](https://raw.githubusercontent.com/vinkasMO/mo-docs/master/screenshots/login.png)
-<hr />
+---
 ![Register](https://raw.githubusercontent.com/vinkasMO/mo-docs/master/screenshots/register.png)
-<hr />
+---
 
 ## Installation
 
