@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
+use App\Foundation\Auth\EmailToken as Confirmable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-use App\Foundation\Auth\EmailToken as Confirmable;
-
 class EmailToken extends Model
 {
-  use Notifiable, Confirmable;
+    use Notifiable, Confirmable;
 
   /**
    * The attributes that are mass assignable.
@@ -32,6 +31,6 @@ class EmailToken extends Model
    */
   public function user()
   {
-    return $this->hasOne('App\User');
+      return $this->hasOne('App\User');
   }
 }
