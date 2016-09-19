@@ -11,10 +11,10 @@ return [
     |
     */
 
-    'register' => 'Create account',
-    'login' => 'Login',
-    'activate' => 'Click here to activate your account',
+    'register'            => 'Create account',
+    'login'               => 'Login',
+    'activate'            => 'Click here to activate your account',
     'send_password_reset' => 'Send Password Reset Link',
-    'reset_password' => 'Reset Password',
+    'reset_password'      => 'Reset Password',
 
 ];

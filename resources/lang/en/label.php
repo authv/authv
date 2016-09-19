@@ -11,11 +11,11 @@ return [
     |
     */
 
-    'name' => 'Full name',
-    'username' => 'Username',
-    'email' => 'Email address',
-    'password' => 'Password',
+    'name'             => 'Full name',
+    'username'         => 'Username',
+    'email'            => 'Email address',
+    'password'         => 'Password',
     'confirm_password' => 'Confirm password',
-    'login' => 'Username or Email',
+    'login'            => 'Username or Email',
 
 ];
