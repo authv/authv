@@ -28,9 +28,7 @@ A simple, secure php authentication server using [Laravel](https://github.com/la
 
 You may install by issuing the Composer create-project command in your terminal:
 
-> Currently MO is highly in development. So please try our development branch using below command.
-
-`composer create-project --stability=dev vinkas/mo-authentication-server`
+`composer create-project vinkas/mo-authentication-server`
 
 ## Security Vulnerabilities
 
