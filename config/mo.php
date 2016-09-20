@@ -2,6 +2,6 @@
 
 return [
 
-  'socialite' => ['google', 'facebook', 'twitter', 'github'],
+  'socialite' => ['google', 'facebook', 'twitter', 'linkedin', 'github', 'bitbucket'],
 
 ];

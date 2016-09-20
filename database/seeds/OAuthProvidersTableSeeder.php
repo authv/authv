@@ -11,8 +11,12 @@ class OAuthProvidersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('oauth_providers')->insert([
-          'name' => 'google',
-        ]);
+        $providers = [
+          ['name' => 'google'],
+          ['name' => 'facebook'],
+          ['name' => 'twitter'],
+          ['name' => 'github'],
+        ];
+        DB::table('oauth_providers')->insert($providers);
     }
 }
