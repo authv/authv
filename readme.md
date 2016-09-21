@@ -13,7 +13,8 @@ A simple, secure php authentication server using [Laravel](https://github.com/la
 * Choosing unique username on user account registration.
 * Login with either username or email address.
 * Email address validation by sending confirmation mail.
-* **[Laravel Socialite](https://github.com/laravel/socialite)** - OAuth authentication with Facebook, Twitter, Google, LinkedIn, GitHub and Bitbucket. It handles almost all of the boilerplate social authentication code you are dreading writing. We are not accepting new adapters. Adapters for other platforms are listed at the community driven [Socialite Providers](https://socialiteproviders.github.io) website.
+* [Laravel Socialite](https://github.com/laravel/socialite) - OAuth authentication with Facebook, Twitter, Google, LinkedIn, GitHub and Bitbucket. It handles almost all of the boilerplate social authentication code you are dreading writing. We are not accepting new adapters. Adapters for other platforms are listed at the community driven [Socialite Providers](https://socialiteproviders.github.io) website.
+* [Discourse](https://github.com/discourse/discourse) SSO login.
 
 ## Screenshots
 
