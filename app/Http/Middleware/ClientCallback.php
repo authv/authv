@@ -19,13 +19,14 @@ class ClientCallback
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(Route::getCurrentRoute()->getName() == 'discourse-sso') {
+        if (Route::getCurrentRoute()->getName() == 'discourse-sso') {
             return $next($request);
         }
         if (Auth::guard($guard)->check()) {
-            if($request->session()->has('client_id')) {
-              return redirect()->route('discourse-sso');
+            if ($request->session()->has('client_id')) {
+                return redirect()->route('discourse-sso');
             }
+
             return $next($request);
         }
 

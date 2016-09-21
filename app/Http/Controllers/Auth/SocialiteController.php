@@ -11,8 +11,7 @@ use Socialite;
 
 class SocialiteController extends Controller
 {
-
-  /**
+    /**
    * Redirect the user to the Provider's authentication page.
    *
    * @return Response

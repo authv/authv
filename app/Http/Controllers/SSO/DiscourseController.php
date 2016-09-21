@@ -2,6 +2,6 @@
 
 namespace App\Http\Controllers\SSO;
 
-class DiscourseController extends Controller {
-
+class DiscourseController extends Controller
+{
 }

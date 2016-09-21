@@ -2,4 +2,6 @@
 
 namespace App\Exceptions\SSO;
 
-class ClientNotFoundException extends \Exception {}
+class ClientNotFoundException extends \Exception
+{
+}
