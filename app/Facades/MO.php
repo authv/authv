@@ -36,12 +36,11 @@ class MO extends Facade
     {
         Route::get('/join', 'Auth\RegisterController@showJoinForm')->name('join');
         Route::post('/join', 'Auth\RegisterController@join');
-      // OAuth2 Sign in
-      Route::get('/oauth2/google', 'Auth\SocialiteController@redirectToGoogle')->name('oauth2-google');
-        Route::get('/oauth2/facebook', 'Auth\SocialiteController@redirectToFacebook')->name('oauth2-facebook');
-      // OAuth2 Sign in Callbacks
-      Route::get('/oauth2/google/callback', 'Auth\SocialiteController@handleGoogleCallback');
-        Route::get('/oauth2/facebook/callback', 'Auth\SocialiteController@handleFacebookCallback');
+
+        Route::get('/oauth2/{provider}', 'Auth\SocialiteController@redirectTo');
+        Route::get('/oauth2/{provider}/callback', 'Auth\SocialiteController@handleCallback');
+
+        Route::get('/sso/discourse', 'SSO\DiscourseController@get')->name('discourse-sso');
     }
 
     public static function immigrationFields()

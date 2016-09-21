@@ -11,34 +11,15 @@ use Socialite;
 
 class SocialiteController extends Controller
 {
-    /**
-   * Redirect the user to the Google authentication page.
-   *
-   * @return Response
-   */
-  public function redirectToGoogle()
-  {
-      return $this->redirectTo('google');
-  }
-
-  /**
-   * Redirect the user to the Facebook authentication page.
-   *
-   * @return Response
-   */
-  public function redirectToFacebook()
-  {
-      return $this->redirectTo('facebook');
-  }
 
   /**
    * Redirect the user to the Provider's authentication page.
    *
    * @return Response
    */
-  public function redirectTo($provider)
+  public function redirectTo(Request $request, $providerName)
   {
-      return Socialite::driver($provider)->redirect();
+      return Socialite::driver($providerName)->redirect();
   }
 
   /**
@@ -103,24 +84,4 @@ class SocialiteController extends Controller
 
         return $ouser;
     }
-
-  /**
-   * Obtain the user information from Google.
-   *
-   * @return Response
-   */
-  public function handleGoogleCallback(Request $request)
-  {
-      return $this->handleCallback($request, 'google');
-  }
-
-  /**
-   * Obtain the user information from Facebook.
-   *
-   * @return Response
-   */
-  public function handleFacebookCallback(Request $request)
-  {
-      return $this->handleCallback($request, 'facebook');
-  }
 }
