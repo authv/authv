@@ -1,27 +1,41 @@
-# Laravel PHP Framework
+![Authv](public/images/logo.png)
+# Authentication & OAuth 2.0 Authorization Server
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![StyleCI](https://styleci.io/repos/67142226/shield?branch=master)](https://styleci.io/repos/67142226)
+[![Build Status](https://travis-ci.org/authv/authv.svg?branch=master)](https://travis-ci.org/authv/authv)
+[![Total Downloads](https://poser.pugx.org/authv/authv/d/total.svg)](https://packagist.org/packages/authv/authv)
+[![Latest stable version](https://poser.pugx.org/authv/authv/v/stable.svg)](https://packagist.org/packages/authv/authv)
+[![Latest Unstable Version](https://poser.pugx.org/authv/authv/v/unstable.svg)](https://packagist.org/packages/authv/authv)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+A simple, secure php authentication and OAuth 2.0 authorization server using [Laravel](https://github.com/laravel/laravel) framework, [Socialite](https://github.com/laravel/socialite), [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Features
 
-## Official Documentation
+* Choosing unique username on user account registration.
+* Login with either username or email address.
+* Email address validation by sending confirmation mail.
+* [Laravel Socialite](https://github.com/laravel/socialite) - OAuth authentication with Facebook, Twitter, Google, LinkedIn, GitHub and Bitbucket. It handles almost all of the boilerplate social authentication code you are dreading writing. We are not accepting new adapters. Adapters for other platforms are listed at the community driven [Socialite Providers](https://socialiteproviders.github.io) website.
+* [Discourse](https://github.com/discourse/discourse) SSO login.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Screenshots
 
-## Contributing
+![Login](https://raw.githubusercontent.com/authv/authv.org/master/screenshots/login.png)
+---
+![Register](https://raw.githubusercontent.com/authv/authv.org/master/screenshots/register.png)
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Installation
+
+#### Via Composer Create-Project
+
+You may install by issuing the Composer create-project command in your terminal:
+
+`composer create-project authv/authv`
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Authv, please send an e-mail to Vinoth Kannan at vinothkannan@vinkas.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The Authv is open-sourced software licensed under the [MIT license](LICENSE.txt).

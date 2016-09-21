@@ -1,12 +1,25 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "authv/authv",
+    "description": "A simple, secure php authentication and OAuth 2.0 authorization server using Laravel framework, Socialite and Passport",
+    "keywords": ["php authentication", "oauth2 server", "authv", "socialite", "passport", "laravel"],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Vinoth Kannan",
+            "email": "vinothkannan@vinkas.com"
+        },
+        {
+            "name": "Vinkas",
+            "homepage": "http://vinkas.com"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "laravel/framework": "5.3.*",
+        "doctrine/dbal": "^2.5",
+        "laravel/socialite": "^2.0",
+        "laravel/passport": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -46,5 +59,10 @@
     },
     "config": {
         "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
     }
 }

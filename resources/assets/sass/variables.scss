@@ -1,0 +1,5 @@
+// Material Design Lite
+@import "node_modules/material-design-lite/src/color-definitions";
+
+$layout-header-bg-color: unquote("rgb(#{$color-white})");
+$layout-header-text-color: unquote("rgb(#{$palette-grey-800})");
