@@ -1,4 +1,4 @@
-<span class="brand-title mdl-layout-title" title="{{ config('app.name', 'Laravel') }}">
-  <img class="brand-logo" src="/images/logo.png" />
-  <img class="brand-mobile-logo" src="/images/logo.png" />
+<span class="brand-title mdl-layout-title" title="{{ config('app.name', 'Authv') }}">
+  <img class="brand-logo" src="{{ config('mo.logo_url.desktop') }}" />
+  <img class="brand-mobile-logo" src="{{ config('mo.logo_url.mobile') }}" />
 </span>
