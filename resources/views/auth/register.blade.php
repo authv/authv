@@ -1,7 +1,7 @@
 @extends('layouts.minimal')
 
 @section('content')
-<h4>Create a free account</h4>
+<h4 class="h-m-top--sm">Create a free account</h4>
 <a href="{{ url('/login') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
   Existing user? <span class="mdl-button--primary">Sign in</span>
 </a>

@@ -9,7 +9,7 @@
       <div class="mdl-layout-spacer"></div>
     </div>
   </header>
-  <div class="mo-content mdl-layout__content">
+  <div class="mdl-layout__content">
       @yield('content')
   </div>
 </div>

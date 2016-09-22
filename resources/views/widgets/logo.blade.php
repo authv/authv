@@ -1,4 +1,4 @@
 <span class="brand-title mdl-layout-title" title="{{ config('app.name', 'Authv') }}">
-  <img class="brand-logo" src="{{ config('mo.logo_url.desktop') }}" />
-  <img class="brand-mobile-logo" src="{{ config('mo.logo_url.mobile') }}" />
+  <img class="brand-logo" src="{{ config('authv.logo_url.desktop') }}" />
+  <img class="brand-mobile-logo" src="{{ config('authv.logo_url.mobile') }}" />
 </span>

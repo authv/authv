@@ -1,6 +1,9 @@
 a {
   text-decoration: none;
 }
+.h-m-top--sm {
+  margin-top: 16px;
+}
 .minimal-layout {
   text-align: center;
 }
@@ -46,18 +49,18 @@ a {
   min-height: 115px;
   background: none;
 }
-.mo-idp-list {
+.idp-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.mo-list-item {
+.idp-list-item {
   direction: ltr;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.mo-idp-button {
+.idp-button {
   direction: ltr;
   font-weight: 500;
   height: 40px;
@@ -66,63 +69,64 @@ a {
   text-align: left;
   width: 100%;
 }
-.mo-idp-icon {
+.idp-icon {
   border: none;
   display: inline-block;
   height: 18px;
   vertical-align: middle;
   width: 18px;
 }
-.mo-idp-text {
+.idp-text {
   color: #fff;
   font-size: 14px;
   padding-left: 16px;
   text-transform: none;
   vertical-align: middle;
 }
-.mo-idp-text.mo-idp-text-long {
+.idp-text.idp-text-long {
   display: inline-block;
 }
-.is-small-screen .mo-idp-text.mo-idp-text-long {
+.is-small-screen .idp-text.idp-text-long {
   display: none;
 }
-.mo-idp-text.mo-idp-text-short {
+.idp-text.idp-text-short {
   display: none;
 }
-.is-small-screen .mo-idp-text.mo-idp-text-short {
+.is-small-screen .idp-text.idp-text-short {
   display: inline-block;
+  margin-left: -3px;
 }
-.mo-idp-list > .mo-list-item {
+.idp-list > .idp-list-item {
   margin-bottom: 15px;
 }
-.is-small-screen .mo-idp-list > .mo-list-item {
+.is-small-screen .idp-list > .idp-list-item {
   display: inline-flex;
   margin-right: 15px;
 }
-.is-small-screen .mo-idp-list > .mo-list-item:last-child {
+.is-small-screen .idp-list > .idp-list-item:last-child {
   margin-right: 0;
 }
-.mo-idp-password,.mo-idp-password:hover {
+.idp-password,.idp-password:hover {
     background-color: #db4437
 }
-.mo-idp-google, .mo-idp-google:hover {
+.idp-google, .idp-google:hover {
   background-color: #ffffff;
 }
-.mo-idp-facebook, .mo-idp-facebook:hover {
+.idp-facebook, .idp-facebook:hover {
   background-color: #3b5998;
 }
-.mo-idp-github,.mo-idp-github:hover {
+.idp-github,.idp-github:hover {
     background-color: #333333;
 }
-.mo-idp-twitter,.mo-idp-twitter:hover {
+.idp-twitter,.idp-twitter:hover {
     background-color: #55acee;
 }
-.mo-idp-linkedin,.mo-idp-linkedin:hover {
+.idp-linkedin,.idp-linkedin:hover {
     background-color: #0077B5;
 }
-.mo-idp-bitbucket,.mo-idp-bitbucket:hover {
+.idp-bitbucket,.idp-bitbucket:hover {
     background-color: #205081;
 }
-.mo-idp-google > .mo-idp-text {
+.idp-google > .idp-text {
   color: #757575;
 }

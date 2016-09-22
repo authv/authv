@@ -32,7 +32,7 @@
       @endif
     </div>
   </header>
-  <div class="mo-content mdl-layout__content">
+  <div class="mdl-layout__content">
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
       <div class="page-content mdl-cell mdl-cell--10-col">

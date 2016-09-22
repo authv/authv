@@ -1,7 +1,7 @@
 @extends('layouts.minimal')
 
 @section('content')
-<h4>Sign in to continue</h4>
+<h4 class="h-m-top--sm">Sign in to continue</h4>
 <div class="mdl-grid">
   <div class="mdl-layout-spacer"></div>
   <div class="is-small-screen">
