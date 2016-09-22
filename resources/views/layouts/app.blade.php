@@ -1,7 +1,7 @@
 @extends('layouts.skeleton')
 
 @section('body')
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
   <header class="brand-header mdl-layout__header">
     <div class="mdl-layout__header-row">
       @include('widgets.logo')

@@ -3,3 +3,9 @@
 
 $layout-header-bg-color: unquote("rgb(#{$color-white})");
 $layout-header-text-color: unquote("rgb(#{$palette-grey-800})");
+
+$layout-header-desktop-row-height: 64px;
+$layout-header-mobile-row-height: 56px;
+
+$layout-header-desktop-logo-height: 48px;
+$layout-header-mobile-logo-height: 40px;
