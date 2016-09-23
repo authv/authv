@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Traits\Auth\RegistersUsers;
 use App\Traits\Auth\SendsEmailConfirmations;
-use App\Http\Controllers\Controller;
 use App\User;
 use Validator;
 
