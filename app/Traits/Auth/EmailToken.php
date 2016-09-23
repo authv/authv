@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Foundation\Auth;
+namespace App\Traits\Auth;
 
 use Exception;
 

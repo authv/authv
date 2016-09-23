@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Foundation\Auth;
+namespace App\Traits\Auth;
 
 use App\Models\EmailToken;
 use App\Notifications\EmailConfirmation;

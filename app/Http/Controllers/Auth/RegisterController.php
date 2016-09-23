@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Foundation\Auth\RegistersUsers;
-use App\Foundation\Auth\SendsEmailConfirmations;
+use App\Traits\Auth\RegistersUsers;
+use App\Traits\Auth\SendsEmailConfirmations;
 use App\Http\Controllers\Controller;
 use App\User;
 use Validator;

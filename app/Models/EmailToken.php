@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Foundation\Auth\EmailToken as Confirmable;
+use App\Traits\Auth\EmailToken as Confirmable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 

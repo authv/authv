@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Foundation\Auth;
+namespace App\Traits\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers as Authenticates;
 use Illuminate\Http\Request;
