@@ -46,8 +46,12 @@ trait RegistersUsers
       if (!$request->session()->has('oauth_user_id')) {
           return redirect('/register');
       }
+      $oid = $request->session()->get('oauth_user_id');
+      $ouser = OAuth\User::where('id', $id)->first();
       $this->joinValidator($request->all())->validate();
-      $this->guard()->login($this->joinCreate($request->all()));
+      $user = $this->joinCreate($request->all());
+      $ouser->user_id = $user->id;
+      $this->guard()->login($user);
 
       return redirect($this->redirectPath());
   }
