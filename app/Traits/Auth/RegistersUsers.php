@@ -47,7 +47,7 @@ trait RegistersUsers
           return redirect('/register');
       }
       $oid = $request->session()->get('oauth_user_id');
-      $ouser = OAuth\User::where('id', $id)->first();
+      $ouser = OAuth\User::where('id', $oid)->first();
       $this->joinValidator($request->all())->validate();
       $user = $this->joinCreate($request->all());
       $ouser->user_id = $user->id;
