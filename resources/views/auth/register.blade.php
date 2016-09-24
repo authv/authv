@@ -6,7 +6,7 @@
   Existing user? <span class="mdl-button--primary">Sign in</span>
 </a>
 <div class="mdl-grid">
-  <div class="mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+  <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-grid">
       <div class="mdl-layout-spacer"></div>
       <form class="form-vertical" role="form" method="POST" action="{{ url('/register') }}">
@@ -57,13 +57,16 @@
           </form>
         </div>
       </div>
-      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-layout-spacer mdl-layout--tablet mdl-layout--mobile"></div>
     </div>
   </div>
-  <div class="mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-    <div class="mdl-layout-spacer"></div>
-    @include('auth.social')
-    <div class="mdl-layout-spacer"></div>
+  <div class="mdl-cell mdl-cell--1-col-desktop mdl-layout--desktop">
+  </div>
+  <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-grid">
+      @include('auth.social')
+      <div class="mdl-layout-spacer mdl-layout--desktop"></div>
+    </div>
   </div>
 </div>
 @endsection

@@ -4,7 +4,7 @@
 <h4 class="h-m-top--sm">Sign in to continue</h4>
 <div class="mdl-grid">
   <div class="mdl-layout-spacer"></div>
-  <div class="is-small-screen">
+  <div class="idp-list-small">
     @include('auth.social')
   </div>
   <div class="mdl-layout-spacer"></div>

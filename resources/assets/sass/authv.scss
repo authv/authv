@@ -1,6 +1,24 @@
 a {
   text-decoration: none;
 }
+.mdl-layout--desktop, .mdl-layout--tablet, .mdl-layout--mobile {
+  display: none;
+}
+@media screen and (min-width: $grid-desktop-breakpoint) {
+  .mdl-layout--desktop {
+    display: block;
+  }
+}
+@media screen and (min-width: $grid-tablet-breakpoint) and (max-width: $grid-desktop-breakpoint - 1) {
+  .mdl-layout--tablet {
+    display: block;
+  }
+}
+@media screen and (max-width: $grid-tablet-breakpoint - 1) {
+  .mdl-layout--mobile {
+    display: block;
+  }
+}
 .h-m-top--sm {
   margin-top: 16px;
 }
@@ -17,7 +35,7 @@ a {
   max-height: $layout-header-mobile-logo-height;
   display: none;
 }
-@media screen and (max-width: $layout-screen-size-threshold) {
+@media screen and (max-width: $grid-desktop-breakpoint - 1) {
   .brand-header .brand-logo {
     display: none;
   }
@@ -53,6 +71,7 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 252px;
 }
 .idp-list-item {
   direction: ltr;
@@ -86,25 +105,11 @@ a {
 .idp-text.idp-text-long {
   display: inline-block;
 }
-.is-small-screen .idp-text.idp-text-long {
-  display: none;
-}
 .idp-text.idp-text-short {
   display: none;
 }
-.is-small-screen .idp-text.idp-text-short {
-  display: inline-block;
-  margin-left: -3px;
-}
 .idp-list > .idp-list-item {
   margin-bottom: 15px;
-}
-.is-small-screen .idp-list > .idp-list-item {
-  display: inline-flex;
-  margin-right: 15px;
-}
-.is-small-screen .idp-list > .idp-list-item:last-child {
-  margin-right: 0;
 }
 .idp-password,.idp-password:hover {
     background-color: #db4437
@@ -129,4 +134,41 @@ a {
 }
 .idp-google > .idp-text {
   color: #757575;
+}
+
+.idp-list-small .idp-text.idp-text-long {
+  display: none;
+}
+.idp-list-small .idp-text.idp-text-short {
+  display: inline-block;
+  margin-left: -3px;
+}
+.idp-list-small .idp-list {
+  width: 100%;
+}
+.idp-list-small .idp-list > .idp-list-item {
+  display: inline-flex;
+  margin-right: 15px;
+}
+.idp-list-small .idp-list > .idp-list-item:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: $grid-desktop-breakpoint - 1) {
+  .idp-text.idp-text-long {
+    display: none;
+  }
+  .idp-text.idp-text-short {
+    display: inline-block;
+    margin-left: -3px;
+  }
+  .idp-list {
+    width: 100%;
+  }
+  .idp-list > .idp-list-item {
+    display: inline-flex;
+    margin-right: 15px;
+  }
+  .idp-list > .idp-list-item:last-child {
+    margin-right: 0;
+  }
 }
