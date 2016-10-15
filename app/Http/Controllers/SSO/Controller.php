@@ -4,7 +4,7 @@ namespace App\Http\Controllers\SSO;
 
 use App\Exceptions\SSO\ClientNotFoundException;
 use App\Http\Controllers\Controller as BaseController;
-use App\Models\SSO\Client;
+use App\Models\Client\SSO;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -38,7 +38,7 @@ class Controller extends BaseController
         if ($this->client) {
             return $this->client;
         }
-        $client = Client::where('id', $this->getClientId())->first();
+        $client = SSO::where('id', $this->getClientId())->first();
         if ($client) {
             $this->client = $client;
 

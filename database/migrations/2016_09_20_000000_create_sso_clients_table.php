@@ -14,12 +14,12 @@ class CreateSSOClientsTable extends Migration
     public function up()
     {
         Schema::create('sso_clients', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('secret', 100);
+            $table->integer('id')->unsigned();
+            $table->string('secret', 64);
             $table->text('redirect');
             $table->boolean('revoked');
             $table->timestamps();
+            $table->foreign('id')->references('id')->on('clients');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateSSOClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sso_users');
+        Schema::dropIfExists('sso_clients');
     }
 }

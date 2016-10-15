@@ -29,6 +29,9 @@ class Authv extends Facade
     {
         Route::get('/users/activate-account/{token}', 'Auth\EmailConfirmationController@showConfirmationForm')->name('confirm-email');
         Route::post('/users/activate-account', 'Auth\EmailConfirmationController@confirm');
+
+        Route::get('/users/accept-invitation/{token}', 'Auth\InvitationController@redeem')->name('redeem');
+
         self::socialiteRoutes();
     }
 

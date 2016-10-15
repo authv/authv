@@ -43,11 +43,17 @@ class Invitation extends Notification
     public function toMail($notifiable)
     {
         $url = route('redeem', ['token' => $this->invite->token]);
+        $user = $this->invite->user;
+        $client = $this->invite->client;
+        $key = $client->domain ? $client->domain : $client->name;
+        $title = $user->name . ' (' . $user->username . ') invited you to join';
 
         return (new MailMessage)
                     ->success()
-                    ->subject(' invited you to join ')
-                    ->line(' invited you to join ')
+                    ->subject($title . ' ' . $key)
+                    ->line($title)
+                    ->line($client->name)
+                    ->line($client->description)
                     ->action('Accept Invitation', $url)
                     ->line('This invitation is from a trusted user, so an account will be created for you automatically.')
                     ->line('If you are not interested to join then please ignore it, no further action is required.');

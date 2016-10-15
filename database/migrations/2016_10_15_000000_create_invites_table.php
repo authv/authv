@@ -15,15 +15,17 @@ class CreateInvitesTable extends Migration
     {
       Schema::create('invites', function (Blueprint $table) {
           $table->increments('id');
+          $table->integer('client_id')->unsigned();
           $table->integer('user_id')->unsigned();
           $table->string('email');
           $table->string('token', 32)->unique();
           $table->integer('redeemed_id')->nullable()->unsigned();
           $table->timestamp('redeemed_at')->nullable();
           $table->timestamps();
-          $table->unique(['user_id', 'email']);
+          $table->unique(['client_id', 'user_id', 'email']);
+          $table->foreign('client_id')->references('id')->on('clients');
           $table->foreign('user_id')->references('id')->on('users');
-          $table->foreign('redeemed_user_id')->references('id')->on('users');
+          $table->foreign('redeemed_id')->references('id')->on('users');
       });
     }
 

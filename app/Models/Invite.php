@@ -12,4 +12,9 @@ class Invite extends Model
       return $this->hasOne('App\User');
   }
 
+  public function client()
+  {
+      return $this->hasOne('App\Models\Client');
+  }
+
 }
