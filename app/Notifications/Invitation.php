@@ -11,16 +11,14 @@ class Invitation extends Notification
 {
     use Queueable;
 
-    protected $invite;
-
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($invite)
+    public function __construct()
     {
-        $this->invite = $invite;
+        //
     }
 
     /**
@@ -42,9 +40,10 @@ class Invitation extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = route('redeem', ['token' => $this->invite->token]);
-        $user = $this->invite->user;
-        $client = $this->invite->client;
+        $invite = $notifiable;
+        $url = route('redeem', ['token' => $invite->token]);
+        $user = $invite->user;
+        $client = $invite->client;
         $key = $client->domain ? $client->domain : $client->name;
         $title = $user->name . ' (' . $user->username . ') invited you to join';
 
