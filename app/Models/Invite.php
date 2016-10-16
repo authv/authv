@@ -18,4 +18,9 @@ class Invite extends Model
       return $this->hasOne('App\Models\Client');
   }
 
+  public function redeem()
+  {
+    //
+  }
+
 }
