@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use App\User;
 
 class Invite extends Model
 {
@@ -18,9 +20,11 @@ class Invite extends Model
       return $this->hasOne('App\Models\Client');
   }
 
-  public function redeem()
+  public function redeem(User $user)
   {
-    //
+    $this->redeemed_id = $user->id;
+    $this->redeemed_at = Carbon::now();
+    $this->save();
   }
 
 }

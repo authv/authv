@@ -45,10 +45,14 @@ class SocialiteController extends Controller
               if ($user) {
                   $ouser->user_id = $user->id;
                   $ouser->save();
-                  Auth::login($user, true);
-
-                  return $this->redirectAfterLogin();
+              } else {
+                $user = User::create([
+                    'email'    => $data['email'],
+                ]);
               }
+              Auth::login($user, true);
+
+              return $this->redirectAfterLogin();
           }
 
           return redirect()->route('join');
