@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Traits\Auth;
+namespace App\Traits\User;
 
 use App\Models\Invite;
-use App\Traits\GeneratesToken;
+use App\Traits\Util\GeneratesToken;
 use Illuminate\Support\Str;
 
-trait Invites
+trait Invitable
 {
     use GeneratesToken;
 
-    public function invite($client_id, $user_id, $email)
+    public function invite($client_id, $email)
     {
-        $data = ['client_id' => $client_id, 'user_id' => $user_id, 'email' => $email];
+        $data = ['client_id' => $client_id, 'user_id' => $this->id, 'email' => $email];
         $invite = $this->createInvite($data);
         $invite->notify(new Invitation());
     }
