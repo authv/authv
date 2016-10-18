@@ -6,7 +6,6 @@ use App\Models\EmailToken;
 use App\Notifications\EmailConfirmation;
 use App\Traits\Util\GeneratesToken;
 use App\User;
-use Illuminate\Support\Str;
 
 trait SendsEmailConfirmations
 {

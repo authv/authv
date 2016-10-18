@@ -41,12 +41,12 @@ class SocialiteController extends Controller
           if ($ouser->email) {
               $user = App\User::where('email', $ouser->email)->first();
               if ($user == null) {
-                $data = [ 'email'    => $ouser->email ];
-                if($ouser->name) {
-                  $data['name'] = $ouser->name;
-                }
-                $user = User::create($data);
-                $existingUser = false;
+                  $data = ['email'    => $ouser->email];
+                  if ($ouser->name) {
+                      $data['name'] = $ouser->name;
+                  }
+                  $user = User::create($data);
+                  $existingUser = false;
               }
               $ouser->user_id = $user->id;
               $ouser->save();
@@ -56,7 +56,7 @@ class SocialiteController extends Controller
               $existingUser = false;
           }
       }
-      if($existingUser) {
+      if ($existingUser) {
           return $this->redirectAfterLogin();
       } else {
           return redirect()->route('join');

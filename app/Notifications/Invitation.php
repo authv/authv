@@ -3,9 +3,8 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class Invitation extends Notification
 {
@@ -24,7 +23,8 @@ class Invitation extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function via($notifiable)
@@ -35,7 +35,8 @@ class Invitation extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
@@ -45,9 +46,9 @@ class Invitation extends Notification
         $user = $invite->user;
         $client = $invite->client;
         $key = $client->domain ? $client->domain : $client->name;
-        $title = $user->name . ' (' . $user->username . ') invited you to join ' . $key;
+        $title = $user->name.' ('.$user->username.') invited you to join '.$key;
 
-        return (new MailMessage)
+        return (new MailMessage())
                     ->success()
                     ->subject($title)
                     ->greeting($client->name)
@@ -61,7 +62,8 @@ class Invitation extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function toArray($notifiable)
