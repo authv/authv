@@ -74,7 +74,6 @@ class RegisterController extends Controller
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        if($data['email_confirmed'])
         $this->sendEmailConfirmation($user);
 
         return $user;
