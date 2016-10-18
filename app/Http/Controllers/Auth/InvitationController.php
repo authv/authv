@@ -27,10 +27,10 @@ class InvitationController extends Controller
    *
    * @return User
    */
-  protected function create(array $data)
+  protected function create($email)
   {
       $user = User::create([
-          'email'    => $data['email'],
+          'email'    => $email,
       ]);
       return $user;
   }
@@ -49,6 +49,10 @@ class InvitationController extends Controller
     }
     if ($invite->redeemed_id) {
         throw new Exception('This invitation already accepted.');
+    }
+    $user = App\User::where('email', $invite->email)->first();
+    if($user) {
+        throw new Exception('This email address already associated with another account.');
     }
     $user = $this->create($invite->email);
     $invite->redeem($user);

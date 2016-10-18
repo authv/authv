@@ -34,27 +34,31 @@ class SocialiteController extends Controller
       if ($ouser == null) {
           $ouser = $this->create($provider->id, $puser);
       }
-      $request->session()->put('oauth_user_id', $ouser->id);
+      $existingUser = true;
       if ($ouser->user_id) {
           Auth::loginUsingId($ouser->user_id, true);
-
+      } else {
+          if ($ouser->email) {
+              $user = App\User::where('email', $ouser->email)->first();
+              if ($user == null) {
+                $data = [ 'email'    => $ouser->email ];
+                if($ouser->name) {
+                  $data['name'] = $ouser->name;
+                }
+                $user = User::create($data);
+                $existingUser = false;
+              }
+              $ouser->user_id = $user->id;
+              $ouser->save();
+              Auth::login($user, true);
+          } else {
+              $request->session()->put('oauth_user_id', $ouser->id);
+              $existingUser = false;
+          }
+      }
+      if($existingUser) {
           return $this->redirectAfterLogin();
       } else {
-          if ($puser->getEmail()) {
-              $user = App\User::where('email', $puser->getEmail())->first();
-              if ($user) {
-                  $ouser->user_id = $user->id;
-                  $ouser->save();
-              } else {
-                $user = User::create([
-                    'email'    => $data['email'],
-                ]);
-              }
-              Auth::login($user, true);
-
-              return $this->redirectAfterLogin();
-          }
-
           return redirect()->route('join');
       }
   }

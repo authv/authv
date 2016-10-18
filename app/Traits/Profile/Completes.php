@@ -4,13 +4,11 @@ namespace App\Traits\Auth;
 
 use App\Models\OAuth;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers as Registers;
 use Illuminate\Http\Request;
 use Validator;
 
-trait RegistersUsers
+trait Completes
 {
-    use Registers;
 
   /**
    * Show the application join form.
@@ -19,7 +17,7 @@ trait RegistersUsers
    *
    * @return \Illuminate\Http\Response
    */
-  public function showJoinForm(Request $request)
+  public function showForm(Request $request)
   {
       if ($request->session()->has('oauth_user_id')) {
           $id = $request->session()->get('oauth_user_id');
@@ -63,7 +61,7 @@ trait RegistersUsers
    *
    * @return \Illuminate\Contracts\Validation\Validator
    */
-  protected function joinValidator(array $data)
+  protected function validator(array $data)
   {
       return Validator::make($data, [
       'name'     => 'required|max:255',
@@ -79,7 +77,7 @@ trait RegistersUsers
    *
    * @return User
    */
-  protected function joinCreate(array $data)
+  protected function create(array $data)
   {
       return User::create([
       'name'     => $data['name'],
