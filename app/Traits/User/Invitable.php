@@ -3,6 +3,7 @@
 namespace App\Traits\User;
 
 use App\Models\Invite;
+use App\Notifications\Invitation;
 use App\Traits\Util\GeneratesToken;
 use Illuminate\Support\Str;
 

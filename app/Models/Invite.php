@@ -11,14 +11,18 @@ class Invite extends Model
 {
   use Notifiable;
 
+  protected $fillable = [
+      'client_id', 'user_id', 'email', 'token',
+  ];
+
   public function user()
   {
-      return $this->hasOne('App\User');
+      return $this->hasOne('App\User', 'id', 'user_id');
   }
 
   public function client()
   {
-      return $this->hasOne('App\Models\Client');
+      return $this->hasOne('App\Models\Client', 'id', 'client_id');
   }
 
   public function redeem(User $user)
