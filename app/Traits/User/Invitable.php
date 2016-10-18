@@ -12,7 +12,7 @@ trait Invitable
 
     public function invite($client_id, $email)
     {
-        $data = ['client_id' => $client_id, 'user_id' => $this->id, 'email' => $email];
+        $data = ['client_id' => $client_id, 'email' => $email];
         $invite = $this->createInvite($data);
         $invite->notify(new Invitation());
     }
@@ -28,7 +28,7 @@ trait Invitable
     {
         return Invite::create([
             'client_id' => $data['client_id'],
-            'user_id' => $data['user_id'],
+            'user_id' => $this->id,
             'email'   => $data['email'],
             'token'   => $this->generateToken(),
         ]);
