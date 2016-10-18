@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Traits\Auth\SendsEmailConfirmations;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
