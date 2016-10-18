@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSSOClientsTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateSSOClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sso_clients', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
-            $table->string('secret', 64);
-            $table->text('redirect');
-            $table->boolean('revoked');
+        Schema::create('clients', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->string('domain')->nullable();
+            $table->string('url');
+            $table->boolean('default')->default(false);
             $table->timestamps();
-            $table->foreign('id')->references('id')->on('clients');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateSSOClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sso_clients');
+        Schema::dropIfExists('clients');
     }
 }

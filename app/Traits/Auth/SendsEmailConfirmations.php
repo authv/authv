@@ -4,11 +4,13 @@ namespace App\Traits\Auth;
 
 use App\Models\EmailToken;
 use App\Notifications\EmailConfirmation;
+use App\Traits\Util\GeneratesToken;
 use App\User;
-use Illuminate\Support\Str;
 
 trait SendsEmailConfirmations
 {
+    use GeneratesToken;
+
     protected function sendEmailConfirmation(User $user)
     {
         $data = ['user_id' => $user->id, 'email' => $user->email];
@@ -28,28 +30,7 @@ trait SendsEmailConfirmations
         return EmailToken::create([
             'user_id' => $data['user_id'],
             'email'   => $data['email'],
-            'token'   => $this->createNewToken(),
+            'token'   => $this->generateToken(),
         ]);
-    }
-
-  /**
-   * Create a new token for the user.
-   *
-   * @return string
-   */
-  protected function createNewToken()
-  {
-      return hash_hmac('sha256', Str::random(40), $this->getHashKey());
-  }
-
-    protected function getHashKey()
-    {
-        $key = config('app.key');
-
-        if (Str::startsWith($key, 'base64:')) {
-            $key = base64_decode(substr($key, 7));
-        }
-
-        return $key;
     }
 }

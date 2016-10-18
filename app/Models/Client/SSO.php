@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\SSO;
+namespace App\Models\Client;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class SSO extends Model
 {
     /**
    * The table associated with the model.

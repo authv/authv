@@ -15,7 +15,7 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('name')->nullable()->change();
-            $table->string('username')->unique()->after('name');
+            $table->string('username')->nullable()->unique()->after('name');
             $table->string('password')->nullable()->change();
         });
     }
