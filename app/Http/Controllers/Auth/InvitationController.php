@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Invite;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -40,9 +42,8 @@ class InvitationController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function redeem(Request $request)
+  public function redeem(Request $request, $token)
   {
-    $token = $request->input('token');
     $invite = Invite::where('token', $token)->first();
     if ($invite == null) {
         abort(401, 'Invalid token');
@@ -50,7 +51,7 @@ class InvitationController extends Controller
     if ($invite->redeemed_id) {
         throw new Exception('This invitation already accepted.');
     }
-    $user = App\User::where('email', $invite->email)->first();
+    $user = User::where('email', $invite->email)->first();
     if($user) {
         throw new Exception('This email address already associated with another account.');
     }

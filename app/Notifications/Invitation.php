@@ -45,13 +45,13 @@ class Invitation extends Notification
         $user = $invite->user;
         $client = $invite->client;
         $key = $client->domain ? $client->domain : $client->name;
-        $title = $user->name . ' (' . $user->username . ') invited you to join';
+        $title = $user->name . ' (' . $user->username . ') invited you to join ' . $key;
 
         return (new MailMessage)
                     ->success()
-                    ->subject($title . ' ' . $key)
+                    ->subject($title)
+                    ->greeting($client->name)
                     ->line($title)
-                    ->line($client->name)
                     ->line($client->description)
                     ->action('Accept Invitation', $url)
                     ->line('This invitation is from a trusted user, so an account will be created for you automatically.')
