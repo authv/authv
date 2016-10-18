@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -19,8 +21,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->session()->put('return_url')) {
+            return redirect($request->session()->get('return_url'));
+        }
         return view('home');
     }
 }

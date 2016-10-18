@@ -66,6 +66,6 @@ trait Completes
           $user->save();
       }
 
-      return redirect('/');
+      return redirect('/home');
   }
 }

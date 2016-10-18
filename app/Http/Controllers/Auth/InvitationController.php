@@ -45,6 +45,7 @@ class InvitationController extends Controller
   public function redeem(Request $request, $token)
   {
       $invite = Invite::where('token', $token)->first();
+      $request->session()->put('return_url', $invite->client->url);
       if ($invite == null) {
           abort(401, 'Invalid token');
       }
