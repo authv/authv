@@ -12,13 +12,16 @@ class CompletionController extends Controller
 {
     use Completes, SendsEmailConfirmations;
 
-    protected function rules($haveEmail) {
+    protected function rules($haveEmail, $havePassword) {
       $list = array(
                 'name'     => 'required|max:255',
                 'username' => 'required|min:6|max:255|unique:users',
               );
       if($haveEmail) {
         $list['email'] = 'required|email|max:255|unique:users';
+      }
+      if($havePassword) {
+        $list['password'] = 'required|min:6';
       }
       return $list;
     }
@@ -30,9 +33,9 @@ class CompletionController extends Controller
      *
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data, $haveEmail)
+    protected function validator(array $data, $haveEmail, $havePassword)
     {
-        return Validator::make($data, $this->rules($haveEmail));
+        return Validator::make($data, $this->rules($haveEmail, $havePassword));
     }
 
     /**

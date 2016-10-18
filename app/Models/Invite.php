@@ -17,12 +17,12 @@ class Invite extends Model
 
   public function user()
   {
-      return $this->hasOne('App\User', 'id', 'user_id');
+      return $this->belongsTo('App\User');
   }
 
   public function client()
   {
-      return $this->hasOne('App\Models\Client', 'id', 'client_id');
+      return $this->belongsTo('App\Models\Client');
   }
 
   public function redeem(User $user)

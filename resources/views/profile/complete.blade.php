@@ -38,6 +38,16 @@
         </div>
         @endif
 
+        @if ($askPassword)
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{{ $errors->has('password') ? ' is-invalid' : '' }}">
+          <input class="mdl-textfield__input" type="password" id="password" name="password" value="{{ old('password') }}" />
+          <label class="mdl-textfield__label" for="password">{{ trans('label.password') }}</label>
+          @if ($errors->has('password'))
+          <span class="mdl-textfield__error">{{ $errors->first('password') }}</span>
+          @endif
+        </div>
+        @endif
+
         <div class="mdl-card__actions">
           <button type="submit" class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-js-button mdl-js-ripple-effect">
             {{  trans('button.register') }}
