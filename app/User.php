@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\User\Invitable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
