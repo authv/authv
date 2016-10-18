@@ -12,24 +12,26 @@ class CompletionController extends Controller
 {
     use Completes, SendsEmailConfirmations;
 
-    protected function rules($haveEmail, $havePassword) {
-      $list = array(
+    protected function rules($haveEmail, $havePassword)
+    {
+        $list = [
                 'name'     => 'required|max:255',
                 'username' => 'required|min:6|max:255|unique:users',
-              );
-      if($haveEmail) {
-        $list['email'] = 'required|email|max:255|unique:users';
-      }
-      if($havePassword) {
-        $list['password'] = 'required|min:6';
-      }
-      return $list;
+              ];
+        if ($haveEmail) {
+            $list['email'] = 'required|email|max:255|unique:users';
+        }
+        if ($havePassword) {
+            $list['password'] = 'required|min:6';
+        }
+
+        return $list;
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      *
      * @return \Illuminate\Contracts\Validation\Validator
      */
@@ -53,6 +55,7 @@ class CompletionController extends Controller
             'email'    => $data['email'],
         ]);
         $this->sendEmailConfirmation($user);
+
         return $user;
     }
 }

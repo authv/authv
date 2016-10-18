@@ -5,7 +5,6 @@ namespace App\Traits\User;
 use App\Models\Invite;
 use App\Notifications\Invitation;
 use App\Traits\Util\GeneratesToken;
-use Illuminate\Support\Str;
 
 trait Invitable
 {
@@ -29,9 +28,9 @@ trait Invitable
     {
         return Invite::create([
             'client_id' => $data['client_id'],
-            'user_id' => $this->id,
-            'email'   => $data['email'],
-            'token'   => $this->generateToken(),
+            'user_id'   => $this->id,
+            'email'     => $data['email'],
+            'token'     => $this->generateToken(),
         ]);
     }
 }

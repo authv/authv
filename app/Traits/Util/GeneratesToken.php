@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 
 trait GeneratesToken
 {
-  /**
+    /**
    * Create a new token for the user.
    *
    * @return string
