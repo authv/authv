@@ -14,13 +14,14 @@ class CreateClientsTable extends Migration
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
+            $table->integer('oauth_id')->unsigned()->nullable();
             $table->increments('id');
             $table->string('name');
+            $table->string('title');
             $table->string('description');
-            $table->string('domain')->nullable();
             $table->string('url');
-            $table->boolean('default')->default(false);
             $table->timestamps();
+            $table->foreign('oauth_id')->references('id')->on('oauth_clients');
         });
     }
 
