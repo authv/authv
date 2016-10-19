@@ -18,7 +18,7 @@ class CreateInvitesTable extends Migration
             $table->integer('client_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('email');
-            $table->string('token', 32)->unique();
+            $table->uuid('token')->unique();
             $table->integer('redeemed_id')->nullable()->unsigned();
             $table->timestamp('redeemed_at')->nullable();
             $table->timestamps();

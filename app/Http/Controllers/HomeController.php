@@ -26,6 +26,7 @@ class HomeController extends Controller
         if ($request->session()->put('return_url')) {
             return redirect($request->session()->get('return_url'));
         }
+        
         return view('home');
     }
 }

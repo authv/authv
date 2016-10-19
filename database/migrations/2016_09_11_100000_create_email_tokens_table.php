@@ -17,7 +17,7 @@ class CreateEmailTokensTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->increments('id');
             $table->string('email');
-            $table->string('token')->unique();
+            $table->uuid('token')->unique();
             $table->boolean('confirmed')->default(false);
             $table->boolean('expired')->default(false);
             $table->timestamps();

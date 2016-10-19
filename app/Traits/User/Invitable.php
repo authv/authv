@@ -4,12 +4,10 @@ namespace App\Traits\User;
 
 use App\Models\Invite;
 use App\Notifications\Invitation;
-use App\Traits\Util\GeneratesToken;
+use Ramsey\Uuid\Uuid;
 
 trait Invitable
 {
-    use GeneratesToken;
-
     public function invite($client_id, $email)
     {
         $data = ['client_id' => $client_id, 'email' => $email];
@@ -30,7 +28,7 @@ trait Invitable
             'client_id' => $data['client_id'],
             'user_id'   => $this->id,
             'email'     => $data['email'],
-            'token'     => $this->generateToken(),
+            'token'     => Uuid::uuid4(),
         ]);
     }
 }
