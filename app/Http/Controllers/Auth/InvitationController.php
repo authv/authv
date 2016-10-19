@@ -60,6 +60,6 @@ class InvitationController extends Controller
       $invite->redeem($user);
       Auth::login($user);
 
-      return redirect()->route('join');
+      return redirect()->route('complete-profile');
   }
 }

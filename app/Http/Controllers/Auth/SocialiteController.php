@@ -59,7 +59,7 @@ class SocialiteController extends Controller
       if ($existingUser) {
           return $this->redirectAfterLogin();
       } else {
-          return redirect()->route('join');
+          return redirect()->route('complete-profile');
       }
   }
 

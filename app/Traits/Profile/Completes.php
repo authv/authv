@@ -11,7 +11,7 @@ use Validator;
 trait Completes
 {
     /**
-   * Show the application join form.
+   * Show the profile completion form.
    *
    * @param  \Illuminate\Http\Request  $request
    *

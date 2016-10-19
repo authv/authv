@@ -37,8 +37,8 @@ class Authv extends Facade
 
     protected static function socialiteRoutes()
     {
-        Route::get('/join', 'Auth\RegisterController@showJoinForm')->name('join');
-        Route::post('/join', 'Auth\RegisterController@join');
+        Route::get('/profile/complete', 'Profile\CompletionController@showForm')->name('complete-profile');
+        Route::post('/profile/complete', 'Profile\CompletionController@complete');
 
         Route::get('/oauth2/{provider}', 'Auth\SocialiteController@redirectTo');
         Route::get('/oauth2/{provider}/callback', 'Auth\SocialiteController@handleCallback');
