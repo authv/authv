@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->session()->put('return_url')) {
+        if ($request->session()->put('return_url')) {
             return redirect($request->session()->get('return_url'));
         }
         return view('home');
