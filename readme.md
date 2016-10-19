@@ -1,11 +1,11 @@
 ![Authv](public/images/logo.png)
 # Authentication & OAuth 2.0 Authorization Server
 
-[![StyleCI](https://styleci.io/repos/67142226/shield?branch=master)](https://styleci.io/repos/67142226)
-[![Build Status](https://travis-ci.org/authv/authv.svg?branch=master)](https://travis-ci.org/authv/authv)
-[![Total Downloads](https://poser.pugx.org/authv/authv/d/total.svg)](https://packagist.org/packages/authv/authv)
-[![Latest stable version](https://poser.pugx.org/authv/authv/v/stable.svg)](https://packagist.org/packages/authv/authv)
-[![Latest Unstable Version](https://poser.pugx.org/authv/authv/v/unstable.svg)](https://packagist.org/packages/authv/authv)
+[![StyleCI][badge-style-ci]][style-ci]
+[![Build Status][badge-build]][build]
+[![Latest stable version][badge-stable]][packagist]
+[![Latest Unstable Version][badge-unstable]][packagist]
+[![Total Downloads][badge-downloads]][packagist]
 
 A simple, secure php authentication and OAuth 2.0 authorization server using [Laravel](https://github.com/laravel/laravel) framework, [Socialite](https://github.com/laravel/socialite), [Passport](https://github.com/laravel/passport) and [Material Design Lite](https://github.com/google/material-design-lite).
 
@@ -40,3 +40,15 @@ If you discover a security vulnerability within Authv, please send an e-mail to 
 ## License
 
 The Authv is open-sourced software licensed under the [MIT license](LICENSE.txt).
+
+
+
+[style-ci]: https://styleci.io/repos/67142226
+[build]: https://travis-ci.org/authv/authv
+[packagist]: https://packagist.org/packages/authv/authv
+
+[badge-style-ci]: https://styleci.io/repos/67142226/shield?branch=master
+[badge-build]: https://img.shields.io/travis/authv/authv/master.svg?style=flat-square
+[badge-stable]: https://poser.pugx.org/authv/authv/v/stable.svg?format=flat-square
+[badge-unstable]: https://poser.pugx.org/authv/authv/v/unstable.svg?format=flat-square
+[badge-downloads]: https://img.shields.io/packagist/dt/authv/authv.svg?style=flat-square
