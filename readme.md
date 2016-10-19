@@ -31,7 +31,9 @@ A simple, secure php authentication and OAuth 2.0 authorization server using [La
 
 You may install by issuing the Composer create-project command in your terminal:
 
-`composer create-project authv/authv`
+```
+composer create-project authv/authv
+```
 
 ## Security Vulnerabilities
 
