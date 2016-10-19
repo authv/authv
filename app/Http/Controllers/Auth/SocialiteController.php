@@ -45,7 +45,7 @@ class SocialiteController extends Controller
                   if ($ouser->name) {
                       $data['name'] = $ouser->name;
                   }
-                  $user = User::create($data);
+                  $user = App\User::create($data);
                   $existingUser = false;
               }
               $ouser->user_id = $user->id;
