@@ -3,7 +3,7 @@
 @section('content')
 <div class="mdl-grid">
   <div class="mdl-layout-spacer"></div>
-  <form class="form-vertical" role="form" method="POST" action="{{ url('/join') }}">
+  <form class="form-vertical" role="form" method="POST" action="{{ route('complete-profile') }}">
     {{ csrf_field() }}
 
     <div class="register-card mdl-card mdl-shadow--2dp">
