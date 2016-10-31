@@ -2,7 +2,7 @@
     "name": "authv/authv",
     "description": "A simple, secure php authentication and OAuth 2.0 authorization server using Laravel framework, Socialite and Passport",
     "keywords": ["php authentication", "oauth2 server", "authv", "socialite", "passport", "laravel"],
-    "license": "MIT",
+    "license": "GPL-3.0",
     "type": "project",
     "authors": [
         {
