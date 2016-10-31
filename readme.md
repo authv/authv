@@ -41,7 +41,9 @@ If you discover a security vulnerability within Authv, please send an e-mail to 
 
 ## License
 
-The Authv is open-sourced software licensed under the [MIT license](LICENSE.txt).
+Licensed under the GNU General Public License Version 3.0; you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+https://www.gnu.org/licenses/gpl-3.0.txt
 
 
 
