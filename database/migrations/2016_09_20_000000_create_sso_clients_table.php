@@ -14,7 +14,7 @@ class CreateSSOClientsTable extends Migration
     public function up()
     {
         Schema::create('sso_clients', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->uuid('secret');
             $table->text('redirect');
             $table->boolean('revoked');
