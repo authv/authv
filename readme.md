@@ -1,6 +1,7 @@
 ![Authv](public/images/logo.png)
 # Authentication & OAuth 2.0 Authorization Server
 
+[![Codiss][badge-codiss]][codiss]
 [![StyleCI][badge-style-ci]][style-ci]
 [![Build Status][badge-build]][build]
 [![Latest stable version][badge-stable]][packagist]
@@ -25,15 +26,7 @@ A simple, secure php authentication and OAuth 2.0 authorization server using [La
 ![Register](https://raw.githubusercontent.com/authv/authv.org/master/screenshots/register.png)
 ---
 
-## Installation
-
-#### Via Composer Create-Project
-
-You may install by issuing the Composer create-project command in your terminal:
-
-```
-composer create-project authv/authv
-```
+## [Installation](https://codiss.com/t/create-your-first-authentication-server/23)
 
 ## Security Vulnerabilities
 
@@ -47,10 +40,12 @@ https://www.gnu.org/licenses/gpl-3.0.txt
 
 
 
+[codiss]: https://codiss.com/c/authv
 [style-ci]: https://styleci.io/repos/67142226
 [build]: https://travis-ci.org/authv/authv
 [packagist]: https://packagist.org/packages/authv/authv
 
+[badge-codiss]: https://img.shields.io/badge/discourse-on_codiss-blue.svg?style=flat-square
 [badge-style-ci]: https://styleci.io/repos/67142226/shield?branch=master
 [badge-build]: https://img.shields.io/travis/authv/authv/master.svg?style=flat-square
 [badge-stable]: https://poser.pugx.org/authv/authv/v/stable.svg?format=flat-square
